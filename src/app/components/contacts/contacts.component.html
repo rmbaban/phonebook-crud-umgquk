@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="table-responsive my-md-4 my-2">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Number</th>
+        <th scope="col">Tags</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contact of contacts;index as i">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{contact.name}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.number}}</td>
+        <td>{{contact.tags}}</td>
+        <td>
+          <div class="table-actions">
+            <button class="btn mx-2 py-0" (click)="onEditContactClick(contact)">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn mx-2 py-0" (click)="onDeleteContactClick(contact)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
